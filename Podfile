@@ -8,6 +8,7 @@ target 'Yippy' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
+    pod 'Firebase/Database'
 
   target 'YippyTests' do
     inherit! :search_paths
