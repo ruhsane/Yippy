@@ -32,6 +32,8 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         if (error == nil) {
             // Perform any operations on signed in user here.
             // ...
+            let viewController:UIViewController = UIStoryboard(name: "ReviewController", bundle: nil).instantiateViewController(withIdentifier: "ReviewController") as UIViewController
+            self.present(viewController, animated: false, completion: nil)
             
         } else {
             print("\(error.localizedDescription)")

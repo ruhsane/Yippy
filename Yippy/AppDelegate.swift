@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let userAtt = ["email": user?.email]
             print("hahha" + (user?.email)!)
             userRef.setValue(userAtt)
+            
         }
     }
     
