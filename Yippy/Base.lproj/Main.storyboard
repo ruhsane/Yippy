@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Review Controller-->
+        <!--Reviews-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ReviewController" id="BYZ-38-t0r" customClass="ReviewController" customModule="Yippy" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7p-Re-vdQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7p-Re-vdQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZeC-tf-vWn">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZeC-tf-vWn" id="jZa-DF-qdx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -42,11 +42,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="THu-g4-LrW"/>
+                    <navigationItem key="navigationItem" title="Reviews" id="THu-g4-LrW">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="Group 7" id="Ac4-0d-nfH">
+                            <connections>
+                                <segue destination="SQO-Lm-3Pz" kind="show" id="Coe-mm-wr8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551.20000000000005" y="140.77961019490255"/>
+            <point key="canvasLocation" x="551.20000000000005" y="139.880059970015"/>
+        </scene>
+        <!--Add Review-->
+        <scene sceneID="Pie-6Z-KRu">
+            <objects>
+                <viewController title="Add Review" id="SQO-Lm-3Pz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oOQ-fu-a2c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ghu-Jt-NnW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFw-yx-YYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1364" y="140"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkt-9Z-UvL">
@@ -61,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BG-Zf-8AL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1094" y="140"/>
+            <point key="canvasLocation" x="-1074" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2TE-A2-ci7">
@@ -79,7 +100,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjI-wW-IrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="140"/>
+            <point key="canvasLocation" x="-281" y="140"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Group 7" width="56" height="56"/>
+    </resources>
 </document>
