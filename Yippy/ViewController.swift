@@ -7,12 +7,35 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, GIDSignInUIDelegate {
+    
+    let signInButton: GIDSignInButton = {
+        let signInButton = GIDSignInButton()
+        signInButton.frame = CGRect(x: 200, y: 200, width: 200, height: 200)
+        return signInButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.addSubview(signInButton)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+                withError error: NSError!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            // ...
+            
+        } else {
+            print("\(error.localizedDescription)")
+        }
     }
 
 
