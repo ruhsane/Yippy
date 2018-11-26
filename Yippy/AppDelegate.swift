@@ -13,14 +13,15 @@ import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if let error = error {
             print("Failed to login to Google")
             return
         }
         print("successfully logged into Google", user)
-
+        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
@@ -32,10 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             // User is signed in
             // ...
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            if let VC = sb.instantiateViewController(withIdentifier: "ReviewController") as? UITableViewController {
+                self.window?.rootViewController = VC
+            }
+            
             let user = Auth.auth().currentUser
             print("user successfully signed in through GOOGLE! uid:\(Auth.auth().currentUser!.uid)")
             print("signed in")
-
+            
             let userRef = Database.database().reference().child("Users").child((user?.uid)!)
             let userAtt = ["email": user?.email]
             print("hahha" + (user?.email)!)
@@ -48,8 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Perform any operations when the user disconnects from app here.
         // ...
     }
-    
-
 
     var window: UIWindow?
 
@@ -61,10 +65,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-
+        /* check for user's token */
+        
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            /* Code to show your tab bar controller */
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            if let VC = sb.instantiateViewController(withIdentifier: "ReviewController") as? UITableViewController {
+                window!.rootViewController = VC
+                print("has auth")
+            }
+        } else {
+            /* code to show your login VC */
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            if let VC = sb.instantiateViewController(withIdentifier: "Login") as? UIViewController {
+                window!.rootViewController = VC
+                print("fuck")
+            }
+        }
+        
         return true
     }
+        
 
+       
+
+    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
         -> Bool {
@@ -104,4 +129,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
 }
+
 
