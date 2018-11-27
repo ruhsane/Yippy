@@ -1,15 +1,18 @@
 //
-//  ReviewController.swift
+//  AddReviewViewController.swift
 //  Yippy
 //
-//  Created by Ryan Nguyen on 11/9/18.
+//  Created by Ruhsane Sawut on 11/26/18.
 //  Copyright © 2018 underwaterSquad. All rights reserved.
 //
 
 import UIKit
 
-class ReviewController: UIViewController {
+class AddReviewViewController: UIViewController {
 
+    @IBAction func saveButton(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
