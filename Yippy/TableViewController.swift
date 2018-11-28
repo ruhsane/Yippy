@@ -11,6 +11,10 @@ import UIKit
 class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+        
+    }
     var cars = [String]()
 
     override func viewDidLoad() {
@@ -46,8 +50,15 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
-        if identifier == "displayReview" {
-            print("Transitioning to the Display Review View Controller")
+        switch identifier {
+        case "displayReview":
+            print("review cell tapped")
+            
+        case "addReview":
+            print("create review bar button item tapped")
+            
+        default:
+            print("unexpected segue identifier")
         }
     }
     
