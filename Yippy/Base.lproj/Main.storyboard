@@ -134,8 +134,17 @@
                                 <segue destination="apz-L5-ReA" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="E9f-gK-Klv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="IvK-z2-Dcv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="IvK-z2-Dcv">
+                            <connections>
+                                <action selector="saveButton:" destination="5Rh-gx-Oyw" id="wgG-Br-NU3"/>
+                                <segue destination="apz-L5-ReA" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="8cL-Gx-KJK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="TfD-Md-QSM" id="EHO-RK-Bpi"/>
+                        <outlet property="titleTextField" destination="nQV-fR-9qg" id="50x-XO-1h4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrf-F3-pDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="apz-L5-ReA" userLabel="Exit" sceneMemberID="exit"/>
