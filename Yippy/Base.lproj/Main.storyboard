@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" title="Reviews" id="THu-g4-LrW">
                         <barButtonItem key="rightBarButtonItem" title="Add" image="Group 7" id="Ac4-0d-nfH">
                             <connections>
-                                <segue destination="SQO-Lm-3Pz" kind="show" id="Coe-mm-wr8"/>
+                                <segue destination="5Rh-gx-Oyw" kind="show" identifier="addReview" id="LyX-Kl-C66"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,81 +94,7 @@
             </objects>
             <point key="canvasLocation" x="551.20000000000005" y="139.880059970015"/>
         </scene>
-        <!--Add Review-->
-        <scene sceneID="Pie-6Z-KRu">
-            <objects>
-                <viewController title="Add Review" id="SQO-Lm-3Pz" customClass="AddReviewViewController" customModule="Yippy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oOQ-fu-a2c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-Aw-CtK">
-                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Titile..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5D-gf-UA8">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="SZe-QP-cPm"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owl-4N-IlO">
-                                        <rect key="frame" x="20" y="50" width="374" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Eoy-SH-JnS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-zx-X6M">
-                                        <rect key="frame" x="20" y="90" width="374" height="357"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-VD-KxP">
-                                        <rect key="frame" x="20" y="467" width="374" height="287"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <state key="normal" title="SAVE"/>
-                                        <connections>
-                                            <action selector="saveButton:" destination="SQO-Lm-3Pz" eventType="touchUpInside" id="fPm-vY-G0a"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Owl-4N-IlO" firstAttribute="leading" secondItem="Bag-Aw-CtK" secondAttribute="leading" constant="20" id="LuR-LP-tL2"/>
-                                    <constraint firstAttribute="trailing" secondItem="6L0-zx-X6M" secondAttribute="trailing" constant="20" id="Mg9-Le-dUf"/>
-                                    <constraint firstAttribute="trailing" secondItem="3q8-VD-KxP" secondAttribute="trailing" constant="20" id="OJh-U0-Xly"/>
-                                    <constraint firstAttribute="trailing" secondItem="D5D-gf-UA8" secondAttribute="trailing" constant="20" id="neP-nZ-aP5"/>
-                                    <constraint firstItem="D5D-gf-UA8" firstAttribute="leading" secondItem="Bag-Aw-CtK" secondAttribute="leading" constant="20" id="oUq-XW-OlO"/>
-                                    <constraint firstItem="3q8-VD-KxP" firstAttribute="leading" secondItem="Bag-Aw-CtK" secondAttribute="leading" constant="20" id="wKb-LF-HTW"/>
-                                    <constraint firstItem="6L0-zx-X6M" firstAttribute="leading" secondItem="Bag-Aw-CtK" secondAttribute="leading" constant="20" id="x4i-Vf-FjC"/>
-                                    <constraint firstAttribute="trailing" secondItem="Owl-4N-IlO" secondAttribute="trailing" constant="20" id="xJr-sz-Yyf"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ghu-Jt-NnW" firstAttribute="bottom" secondItem="Bag-Aw-CtK" secondAttribute="bottom" id="IIC-uD-nqz"/>
-                            <constraint firstItem="Bag-Aw-CtK" firstAttribute="top" secondItem="ghu-Jt-NnW" secondAttribute="top" constant="20" id="Ubp-WT-BqD"/>
-                            <constraint firstItem="Bag-Aw-CtK" firstAttribute="leading" secondItem="ghu-Jt-NnW" secondAttribute="leading" id="fwV-pA-l23"/>
-                            <constraint firstItem="ghu-Jt-NnW" firstAttribute="trailing" secondItem="Bag-Aw-CtK" secondAttribute="trailing" id="mah-9N-j5l"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ghu-Jt-NnW"/>
-                    </view>
-                    <connections>
-                        <outlet property="descriptionText" destination="6L0-zx-X6M" id="eq4-QP-FWY"/>
-                        <outlet property="titleText" destination="D5D-gf-UA8" id="VTR-Wp-h1P"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aFw-yx-YYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1338" y="-387"/>
-        </scene>
-        <!--Display Review View Controller-->
+        <!--Title-->
         <scene sceneID="Rvk-se-ZH6">
             <objects>
                 <viewController id="5Rh-gx-Oyw" customClass="DisplayReviewViewController" customModule="Yippy" customModuleProvider="target" sceneMemberID="viewController">
@@ -202,10 +128,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bOg-kJ-MRA"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="d0v-of-0cL">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="PcJ-23-YG0">
+                            <connections>
+                                <segue destination="apz-L5-ReA" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="E9f-gK-Klv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="IvK-z2-Dcv">
+                            <connections>
+                                <action selector="saveButton:" destination="5Rh-gx-Oyw" id="wgG-Br-NU3"/>
+                                <segue destination="apz-L5-ReA" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="8cL-Gx-KJK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="TfD-Md-QSM" id="EHO-RK-Bpi"/>
+                        <outlet property="titleTextField" destination="nQV-fR-9qg" id="50x-XO-1h4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrf-F3-pDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="apz-L5-ReA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1337.68115942029" y="310.71428571428572"/>
+            <point key="canvasLocation" x="1403" y="139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkt-9Z-UvL">
@@ -244,4 +188,7 @@
     <resources>
         <image name="Group 7" width="56" height="56"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LyX-Kl-C66"/>
+    </inferredMetricsTieBreakers>
 </document>

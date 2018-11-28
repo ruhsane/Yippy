@@ -11,8 +11,9 @@
 		2801E6D821ADE23200C586D1 /* ListReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801E6D721ADE23200C586D1 /* ListReviewTableViewCell.swift */; };
 		2801E6DA21ADE8D000C586D1 /* DisplayReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */; };
 		28D2FBB72196A9100077D0FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2FBB62196A9100077D0FF /* ViewController.swift */; };
+		28DC8A8021AE44B1000701BC /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC8A7F21AE44B1000701BC /* Reviews.swift */; };
+		28DC8A8521AE4D64000701BC /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC8A8421AE4D64000701BC /* DateString.swift */; };
 		3A5A25284FFD01CD4111D1CA /* Pods_YippyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5304B3E6E88B78601D3C0E /* Pods_YippyUITests.framework */; };
-		9D974E5621AC844D00589434 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D974E5521AC844D00589434 /* AddReviewViewController.swift */; };
 		9DDB35A22196941C006F414D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB35A12196941C006F414D /* AppDelegate.swift */; };
 		9DDB35A72196941C006F414D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB35A52196941C006F414D /* Main.storyboard */; };
 		9DDB35A92196941D006F414D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB35A82196941D006F414D /* Assets.xcassets */; };
@@ -47,12 +48,13 @@
 		2801E6D721ADE23200C586D1 /* ListReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReviewTableViewCell.swift; sourceTree = "<group>"; };
 		2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReviewViewController.swift; sourceTree = "<group>"; };
 		28D2FBB62196A9100077D0FF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28DC8A7F21AE44B1000701BC /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		28DC8A8421AE4D64000701BC /* DateString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateString.swift; path = Yippy/Model/DateString.swift; sourceTree = SOURCE_ROOT; };
 		3B5304B3E6E88B78601D3C0E /* Pods_YippyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YippyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CE9DD33536D9E57BE8A06D /* Pods_Yippy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yippy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83CE8D23FD62DDDACF3B95CB /* Pods-Yippy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yippy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yippy/Pods-Yippy.debug.xcconfig"; sourceTree = "<group>"; };
 		8F7DBC7C0BEC72DC4AEB69DF /* Pods-YippyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YippyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YippyUITests/Pods-YippyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		93EFD4DF3311D835BBEE6BD9 /* Pods-Yippy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yippy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yippy/Pods-Yippy.release.xcconfig"; sourceTree = "<group>"; };
-		9D974E5521AC844D00589434 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		9DDB359E2196941C006F414D /* Yippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yippy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDB35A12196941C006F414D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DDB35A62196941C006F414D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28DC8A8121AE44B9000701BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28DC8A7F21AE44B1000701BC /* Reviews.swift */,
+				28DC8A8421AE4D64000701BC /* DateString.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28DC8A8221AE44BE000701BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2801E6D721ADE23200C586D1 /* ListReviewTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28DC8A8321AE44C4000701BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28D2FBB62196A9100077D0FF /* ViewController.swift */,
+				2801E6D521ADC71E00C586D1 /* TableViewController.swift */,
+				2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		958EDCBBEA5A16457289E905 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,12 +169,10 @@
 		9DDB35A02196941C006F414D /* Yippy */ = {
 			isa = PBXGroup;
 			children = (
+				28DC8A8321AE44C4000701BC /* Controller */,
+				28DC8A8221AE44BE000701BC /* View */,
+				28DC8A8121AE44B9000701BC /* Model */,
 				9DDB35A12196941C006F414D /* AppDelegate.swift */,
-				28D2FBB62196A9100077D0FF /* ViewController.swift */,
-				2801E6D521ADC71E00C586D1 /* TableViewController.swift */,
-				2801E6D721ADE23200C586D1 /* ListReviewTableViewCell.swift */,
-				2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */,
-				9D974E5521AC844D00589434 /* AddReviewViewController.swift */,
 				9DDB35A82196941D006F414D /* Assets.xcassets */,
 				9DDB35A52196941C006F414D /* Main.storyboard */,
 				9DDB35AA2196941D006F414D /* LaunchScreen.storyboard */,
@@ -424,10 +451,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DC8A8521AE4D64000701BC /* DateString.swift in Sources */,
 				28D2FBB72196A9100077D0FF /* ViewController.swift in Sources */,
 				2801E6DA21ADE8D000C586D1 /* DisplayReviewViewController.swift in Sources */,
 				9DDB35A22196941C006F414D /* AppDelegate.swift in Sources */,
-				9D974E5621AC844D00589434 /* AddReviewViewController.swift in Sources */,
+				28DC8A8021AE44B1000701BC /* Reviews.swift in Sources */,
 				2801E6D821ADE23200C586D1 /* ListReviewTableViewCell.swift in Sources */,
 				2801E6D621ADC71E00C586D1 /* TableViewController.swift in Sources */,
 			);
