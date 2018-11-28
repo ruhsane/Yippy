@@ -10,7 +10,11 @@ import UIKit
 
 class AddReviewViewController: UIViewController {
 
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var descriptionText: UITextView!
+    
     @IBAction func saveButton(_ sender: UIButton) {
+        
     }
     
     override func viewDidLoad() {
