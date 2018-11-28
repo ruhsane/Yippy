@@ -23,8 +23,16 @@ class DisplayReviewViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        modularReviewTitle()
     }
     
+    func modularReviewTitle() {
+        if let reviewTitle = review?.title {
+            self.title = reviewTitle
+        } else {
+            self.title = "Create a Review"
+        }
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
