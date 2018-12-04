@@ -33,13 +33,19 @@
                                                     <rect key="frame" x="15" y="0.0" width="384" height="99.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-9x-rxh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="31.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                                             <color key="textColor" red="0.65018953432715909" green="0.64317767751238353" blue="0.91649470351624363" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified TImestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T7-SD-ULA">
-                                                            <rect key="frame" x="0.0" y="54" width="384" height="45.666666666666657"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQW-HS-jGS">
+                                                            <rect key="frame" x="0.0" y="39.666666666666664" width="384" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.6511043906211853" green="0.64239656925201416" blue="0.93668490648269653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Last Modified TImestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T7-SD-ULA">
+                                                            <rect key="frame" x="0.0" y="68" width="384" height="31.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.40392156862745099" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -59,6 +65,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lastModificationLabel" destination="9T7-SD-ULA" id="ThH-nw-Iay"/>
+                                            <outlet property="locationTitleLabel" destination="HQW-HS-jGS" id="qIQ-xK-gND"/>
                                             <outlet property="reviewTitleLabel" destination="lbS-9x-rxh" id="hVd-9H-55Z"/>
                                             <segue destination="5Rh-gx-Oyw" kind="show" identifier="displayReview" id="gIu-En-nea"/>
                                         </connections>
@@ -102,29 +109,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQV-fR-9qg">
-                                <rect key="frame" x="20" y="103" width="374" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TfD-Md-QSM">
-                                <rect key="frame" x="20" y="148" width="374" height="734"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-ee-MiK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Review:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPU-5k-QMG">
+                                        <rect key="frame" x="20" y="20" width="117" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQV-fR-9qg">
+                                        <rect key="frame" x="20" y="49" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.94893044233322144" green="0.94519954919815063" blue="0.93725389242172241" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLF-N8-btz">
+                                        <rect key="frame" x="20" y="93" width="120" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tL5-RI-ONN" userLabel="Location Text Field">
+                                        <rect key="frame" x="20" y="122" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.94838172197341919" green="0.94593542814254761" blue="0.93846464157104492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrL-ts-tet">
+                                        <rect key="frame" x="28" y="286" width="59" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TfD-Md-QSM">
+                                        <rect key="frame" x="20" y="315" width="374" height="439"/>
+                                        <color key="backgroundColor" red="0.94838172197341919" green="0.94593542814254761" blue="0.93846464157104492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="439" id="i1B-R7-US4"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xPU-5k-QMG" secondAttribute="trailing" constant="277" id="1M0-Tt-qUr"/>
+                                    <constraint firstAttribute="bottom" secondItem="TfD-Md-QSM" secondAttribute="bottom" constant="37" id="56L-O9-roK"/>
+                                    <constraint firstItem="xPU-5k-QMG" firstAttribute="leading" secondItem="zLF-N8-btz" secondAttribute="leading" id="684-Z8-nYl"/>
+                                    <constraint firstItem="nQV-fR-9qg" firstAttribute="top" secondItem="xPU-5k-QMG" secondAttribute="bottom" constant="8" symbolic="YES" id="6Gr-Wy-6vC"/>
+                                    <constraint firstItem="tL5-RI-ONN" firstAttribute="trailing" secondItem="nQV-fR-9qg" secondAttribute="trailing" id="E12-T5-Lgf"/>
+                                    <constraint firstItem="xPU-5k-QMG" firstAttribute="leading" secondItem="tL5-RI-ONN" secondAttribute="leading" id="FgS-ja-AXh"/>
+                                    <constraint firstItem="tL5-RI-ONN" firstAttribute="top" secondItem="zLF-N8-btz" secondAttribute="bottom" constant="8" symbolic="YES" id="Mhm-Bb-Voz"/>
+                                    <constraint firstItem="tL5-RI-ONN" firstAttribute="top" secondItem="GB6-ee-MiK" secondAttribute="top" constant="122" id="O00-VZ-CXR"/>
+                                    <constraint firstItem="TrL-ts-tet" firstAttribute="leading" secondItem="GB6-ee-MiK" secondAttribute="leading" constant="28" id="OsR-mF-zQS"/>
+                                    <constraint firstItem="xPU-5k-QMG" firstAttribute="leading" secondItem="nQV-fR-9qg" secondAttribute="leading" id="RGv-Yg-rdN"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TrL-ts-tet" secondAttribute="trailing" constant="20" symbolic="YES" id="YZs-n1-TTE"/>
+                                    <constraint firstItem="xPU-5k-QMG" firstAttribute="top" secondItem="GB6-ee-MiK" secondAttribute="top" constant="20" id="aaO-Nm-Rap"/>
+                                    <constraint firstItem="TfD-Md-QSM" firstAttribute="top" secondItem="TrL-ts-tet" secondAttribute="bottom" constant="8" symbolic="YES" id="iKf-St-YqO"/>
+                                    <constraint firstItem="tL5-RI-ONN" firstAttribute="centerX" secondItem="GB6-ee-MiK" secondAttribute="centerX" id="jVP-Aa-d2e"/>
+                                    <constraint firstItem="tL5-RI-ONN" firstAttribute="trailing" secondItem="TfD-Md-QSM" secondAttribute="trailing" id="mjy-Pl-cVc"/>
+                                    <constraint firstItem="xPU-5k-QMG" firstAttribute="leading" secondItem="GB6-ee-MiK" secondAttribute="leading" constant="20" id="ok0-QO-UvQ"/>
+                                    <constraint firstItem="xPU-5k-QMG" firstAttribute="leading" secondItem="TfD-Md-QSM" secondAttribute="leading" id="smM-Ho-M3g"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zLF-N8-btz" secondAttribute="trailing" constant="20" symbolic="YES" id="uh5-bp-wgr"/>
+                                    <constraint firstAttribute="bottom" secondItem="xPU-5k-QMG" secondAttribute="bottom" constant="750" id="vaD-iB-qN5"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bOg-kJ-MRA" firstAttribute="trailing" secondItem="nQV-fR-9qg" secondAttribute="trailing" constant="20" id="9zc-T3-rOh"/>
-                            <constraint firstItem="TfD-Md-QSM" firstAttribute="leading" secondItem="bOg-kJ-MRA" secondAttribute="leading" constant="20" id="HtM-eZ-ytS"/>
-                            <constraint firstItem="nQV-fR-9qg" firstAttribute="top" secondItem="bOg-kJ-MRA" secondAttribute="top" constant="15" id="Mzf-2M-HKF"/>
-                            <constraint firstItem="TfD-Md-QSM" firstAttribute="bottom" secondItem="bOg-kJ-MRA" secondAttribute="bottom" constant="20" id="gT1-T5-8rQ"/>
-                            <constraint firstItem="nQV-fR-9qg" firstAttribute="leading" secondItem="bOg-kJ-MRA" secondAttribute="leading" constant="20" id="laL-Qr-7pJ"/>
-                            <constraint firstItem="TfD-Md-QSM" firstAttribute="top" secondItem="nQV-fR-9qg" secondAttribute="bottom" constant="15" id="rce-Kv-UdS"/>
-                            <constraint firstItem="bOg-kJ-MRA" firstAttribute="trailing" secondItem="TfD-Md-QSM" secondAttribute="trailing" constant="20" id="ryr-ma-OIg"/>
+                            <constraint firstItem="GB6-ee-MiK" firstAttribute="top" secondItem="bOg-kJ-MRA" secondAttribute="top" id="4yP-4b-2qb"/>
+                            <constraint firstItem="GB6-ee-MiK" firstAttribute="trailing" secondItem="bOg-kJ-MRA" secondAttribute="trailing" id="Uvt-s5-Wu0"/>
+                            <constraint firstItem="GB6-ee-MiK" firstAttribute="leading" secondItem="bOg-kJ-MRA" secondAttribute="leading" id="V2d-eJ-LRz"/>
+                            <constraint firstAttribute="bottom" secondItem="GB6-ee-MiK" secondAttribute="bottom" id="p4G-97-D0e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bOg-kJ-MRA"/>
                     </view>
@@ -143,13 +202,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="TfD-Md-QSM" id="EHO-RK-Bpi"/>
+                        <outlet property="locationTextField" destination="tL5-RI-ONN" id="5QV-fY-ElW"/>
                         <outlet property="titleTextField" destination="nQV-fR-9qg" id="50x-XO-1h4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrf-F3-pDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="apz-L5-ReA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1403" y="139"/>
+            <point key="canvasLocation" x="1402.8985507246377" y="138.61607142857142"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkt-9Z-UvL">

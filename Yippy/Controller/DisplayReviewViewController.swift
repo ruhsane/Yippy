@@ -12,6 +12,8 @@ class DisplayReviewViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
 
+    @IBOutlet weak var locationTextField: UITextField!
+    
     @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBAction func saveButton(_ sender: Any) {
@@ -43,13 +45,16 @@ class DisplayReviewViewController: UIViewController {
         switch identifier {
         case "save" where review != nil:
             review?.title = titleTextField.text ?? ""
+            review?.location = locationTextField.text ?? ""
             review?.content = descriptionTextView.text ?? ""
+            
             
             destination.tableView.reloadData()
             
         case "save" where review == nil:
             let review = Reviews()
             review.title = titleTextField.text ?? ""
+            review.location = locationTextField.text ?? ""
             review.content = descriptionTextView.text ?? ""
             review.modificationTime = Date()
             
@@ -70,9 +75,11 @@ class DisplayReviewViewController: UIViewController {
         
         if let review = review {
             titleTextField.text = review.title
+            locationTextField.text = review.location
             descriptionTextView.text = review.content
         } else {
             titleTextField.text = ""
+            locationTextField.text = ""
             descriptionTextView.text = ""
         }
     }

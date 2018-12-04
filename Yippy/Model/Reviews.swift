@@ -11,6 +11,7 @@ import Foundation
 class Reviews {
     
     var title = ""
+    var location = ""
     var content = ""
     var modificationTime = Date()
     

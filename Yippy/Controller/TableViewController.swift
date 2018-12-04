@@ -48,7 +48,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
 
         let review = reviews[indexPath.row]
         cell.reviewTitleLabel.text = review.title
-        
+        cell.locationTitleLabel.text = review.location
         cell.lastModificationLabel.text = review.modificationTime.stringValue
         
         return cell
