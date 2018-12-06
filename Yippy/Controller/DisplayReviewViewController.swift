@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DisplayReviewViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class DisplayReviewViewController: UIViewController {
     }
     
     var review: Reviews?
+    var refReviews: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +44,27 @@ class DisplayReviewViewController: UIViewController {
             let destination = segue.destination as? TableViewController
             else { return }
         
+        let user = Auth.auth().currentUser
+        refReviews = Database.database().reference().child("Reviews").child((user!.uid))
+
         switch identifier {
         case "save" where review != nil:
             review?.title = titleTextField.text ?? ""
             review?.location = locationTextField.text ?? ""
             review?.content = descriptionTextView.text ?? ""
+            review?.modificationTime = Date()
             
-            
+            let key = refReviews.childByAutoId().key
+            var reviewData = ["id":key,
+                          "title" : titleTextField.text ?? "",
+                          "location" : locationTextField.text ?? "",
+                          "content" : descriptionTextView.text ?? "",
+//                          "modificationTime" : Date()
+                ] as [String : Any]
+
+            refReviews.child(key!).setValue(reviewData)
             destination.tableView.reloadData()
-            
+
         case "save" where review == nil:
             let review = Reviews()
             review.title = titleTextField.text ?? ""
@@ -58,8 +72,17 @@ class DisplayReviewViewController: UIViewController {
             review.content = descriptionTextView.text ?? ""
             review.modificationTime = Date()
             
-            destination.reviews.append(review)
+            let key = refReviews.childByAutoId().key
+            var reviewData = ["id": key,
+                          "title" : titleTextField.text ?? "",
+                          "location" : locationTextField.text ?? "",
+                          "content" : descriptionTextView.text ?? "",
+//                          "modificationTime" : Date()
+                ] as [String : Any]
 
+            refReviews.child(key!).setValue(reviewData)
+            
+            destination.reviews.append(review)
 
             
         case "cancel":
