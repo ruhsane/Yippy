@@ -43,13 +43,13 @@ class DisplayReviewViewController: UIViewController {
             else { return }
         
         switch identifier {
-        case "save" where review != nil:
-            review?.title = titleTextField.text ?? ""
-            review?.location = locationTextField.text ?? ""
-            review?.content = descriptionTextView.text ?? ""
-            
-            
-            destination.tableView.reloadData()
+//        case "save" where review != nil:
+//            review?.title = titleTextField.text ?? ""
+//            review?.location = locationTextField.text ?? ""
+//            review?.content = descriptionTextView.text ?? ""
+//
+//
+//            destination.tableView.reloadData()
             
         case "save" where review == nil:
             let review = Reviews()
