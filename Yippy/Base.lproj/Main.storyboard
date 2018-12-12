@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5yB-Bc-Cze">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -87,6 +87,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reviews" id="THu-g4-LrW">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="si6-UY-mpn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GmC-XL-L9l">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <action selector="profileButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ydn-6O-vCG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Ac4-0d-nfH">
                             <connections>
                                 <segue destination="5Rh-gx-Oyw" kind="show" identifier="addReview" id="LyX-Kl-C66"/>
@@ -99,7 +109,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551.20000000000005" y="139.880059970015"/>
+            <point key="canvasLocation" x="1846" y="167"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="tg4-I0-SbO">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="Vua-pu-sec" customClass="ProfileViewController" customModule="Yippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Po4-6t-mEi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwX-yu-Q1q">
+                                <rect key="frame" x="179" y="388" width="57" height="384"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOutButton:" destination="Vua-pu-sec" eventType="touchUpInside" id="hmX-Uz-6q5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vyc-zZ-0CU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3O-VX-lLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239" y="925"/>
         </scene>
         <!--Title-->
         <scene sceneID="Rvk-se-ZH6">
@@ -209,25 +244,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrf-F3-pDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="apz-L5-ReA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1402.8985507246377" y="138.61607142857142"/>
+            <point key="canvasLocation" x="3054" y="167"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkt-9Z-UvL">
             <objects>
-                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5yB-Bc-Cze" customClass="ViewController" customModule="Yippy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5yB-Bc-Cze" customClass="ViewController" customModule="Yippy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wis-aN-iSN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mtq-Vn-Qef"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KK7-JD-BN6"/>
                     <connections>
-                        <segue destination="B5v-fa-gwe" kind="show" identifier="mainPage" id="PnQ-m8-Dgj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="laR-hl-i4t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BG-Zf-8AL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1074" y="140"/>
+            <point key="canvasLocation" x="714" y="167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2TE-A2-ci7">
@@ -240,15 +276,15 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Q36-Qe-gxr"/>
+                        <segue destination="5yB-Bc-Cze" kind="relationship" relationship="rootViewController" id="nd3-72-0F6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjI-wW-IrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281" y="140"/>
+            <point key="canvasLocation" x="-217" y="167"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LyX-Kl-C66"/>
+        <segue reference="gIu-En-nea"/>
     </inferredMetricsTieBreakers>
 </document>

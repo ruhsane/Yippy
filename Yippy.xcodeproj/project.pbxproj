@@ -22,6 +22,8 @@
 		9DDB35C22196941D006F414D /* YippyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB35C12196941D006F414D /* YippyUITests.swift */; };
 		9DDB35D021969550006F414D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB35CF21969550006F414D /* Podfile */; };
 		9DDB35D22196960F006F414D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB35D12196960F006F414D /* GoogleService-Info.plist */; };
+		9DDDC17021C12B2900548ED1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDDC16F21C12B2900548ED1 /* ProfileViewController.swift */; };
+		9DDDC17221C1420F00548ED1 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDDC17121C1420F00548ED1 /* Switcher.swift */; };
 		C78A04D1685D8C0480018265 /* Pods_YippyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A932DDDC02FFD3094FDCCB /* Pods_YippyTests.framework */; };
 		E0BCC314F6CDF9AAA1E100EE /* Pods_Yippy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CE9DD33536D9E57BE8A06D /* Pods_Yippy.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		9DDB35C32196941D006F414D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DDB35CF21969550006F414D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DDB35D12196960F006F414D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DDDC16F21C12B2900548ED1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9DDDC17121C1420F00548ED1 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		C27DEA07B518EDB18626FB5E /* Pods-YippyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YippyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YippyUITests/Pods-YippyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD4CE3322E05EB6B5F70649A /* Pods-YippyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YippyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YippyTests/Pods-YippyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD6C8B199EE7C985A92C9F66 /* Pods-YippyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YippyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YippyTests/Pods-YippyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			children = (
 				28DC8A7F21AE44B1000701BC /* Reviews.swift */,
 				28DC8A8421AE4D64000701BC /* DateString.swift */,
+				9DDDC17121C1420F00548ED1 /* Switcher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				28D2FBB62196A9100077D0FF /* ViewController.swift */,
 				2801E6D521ADC71E00C586D1 /* TableViewController.swift */,
 				2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */,
+				9DDDC16F21C12B2900548ED1 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,7 +462,9 @@
 				2801E6DA21ADE8D000C586D1 /* DisplayReviewViewController.swift in Sources */,
 				9DDB35A22196941C006F414D /* AppDelegate.swift in Sources */,
 				28DC8A8021AE44B1000701BC /* Reviews.swift in Sources */,
+				9DDDC17221C1420F00548ED1 /* Switcher.swift in Sources */,
 				2801E6D821ADE23200C586D1 /* ListReviewTableViewCell.swift in Sources */,
+				9DDDC17021C12B2900548ED1 /* ProfileViewController.swift in Sources */,
 				2801E6D621ADC71E00C586D1 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,7 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FBPU586293;
+				DEVELOPMENT_TEAM = P32V53W8H7;
 				INFOPLIST_FILE = Yippy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -653,7 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FBPU586293;
+				DEVELOPMENT_TEAM = P32V53W8H7;
 				INFOPLIST_FILE = Yippy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
