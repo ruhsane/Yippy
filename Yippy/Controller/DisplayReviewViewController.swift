@@ -28,6 +28,8 @@ class DisplayReviewViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         modularReviewTitle()
+        navigationUI()
+
     }
     
     func modularReviewTitle() {
@@ -36,6 +38,10 @@ class DisplayReviewViewController: UIViewController {
         } else {
             self.title = "Create a Review"
         }
+    }
+    
+    func navigationUI() {
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor : UIColor.blue, NSAttributedString.Key.font : UIFont(name: "Optima-Bold", size: 24)!]
     }
     
     

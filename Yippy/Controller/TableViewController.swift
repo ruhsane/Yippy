@@ -29,6 +29,14 @@ class TableViewController: UIViewController {
         tableView.dataSource = self
 
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.71, green:0.89, blue:0.98, alpha:1.0)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor : UIColor.blue, NSAttributedString.Key.font : UIFont(name: "Optima-Bold", size: 30)!]
+        
+
+
+
     }
     
 }
