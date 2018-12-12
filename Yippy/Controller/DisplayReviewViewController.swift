@@ -59,6 +59,8 @@ class DisplayReviewViewController: UIViewController {
             review?.location = locationTextField.text ?? ""
             review?.content = descriptionTextView.text ?? ""
 
+            destination.tableView.reloadData()
+
             
         case "save" where review == nil:
             let review = Reviews()
