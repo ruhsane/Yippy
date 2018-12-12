@@ -12,6 +12,12 @@ class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func profileButton(_ sender: Any) {
+        let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
+    }
+    
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         
     }
@@ -76,6 +82,9 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
             
         case "addReview":
             print("create review bar button item tapped")
+            
+        case "profile":
+            print("We in bois")
             
         default:
             print("unexpected segue identifier")

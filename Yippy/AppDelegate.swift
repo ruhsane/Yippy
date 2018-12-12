@@ -70,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         /* check for user's token */
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        Switcher.updateRootVC()
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
         if GIDSignIn.sharedInstance().hasAuthInKeychain(){

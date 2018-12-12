@@ -12,9 +12,15 @@ import GoogleSignIn
 
 class ViewController: UIViewController, GIDSignInUIDelegate {
     
+    @IBAction func signedOut(_ segue: UIStoryboardSegue) {
+        
+    }
+    
     let signInButton: GIDSignInButton = {
         let signInButton = GIDSignInButton()
         signInButton.frame = CGRect(x: 200, y: 200, width: 200, height: 200)
+        UserDefaults.standard.set(true, forKey: "status")
+        Switcher.updateRootVC()
         return signInButton
     }()
     
@@ -29,7 +35,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().uiDelegate = self
 //        GIDSignIn.sharedInstance().delegate = self
 //        GIDSignIn.sharedInstance().signIn()
-        GIDSignIn.sharedInstance().signInSilently()
+//        GIDSignIn.sharedInstance().signInSilently()
         
         constraints()
 
