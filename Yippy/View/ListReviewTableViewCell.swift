@@ -9,6 +9,7 @@
 import UIKit
 
 class ListReviewTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var reviewTitleLabel: UILabel!
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var lastModificationLabel: UILabel!

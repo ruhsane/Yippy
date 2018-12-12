@@ -28,6 +28,8 @@ class DisplayReviewViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         modularReviewTitle()
+        navigationUI()
+
     }
     
     func modularReviewTitle() {
@@ -36,6 +38,10 @@ class DisplayReviewViewController: UIViewController {
         } else {
             self.title = "Create a Review"
         }
+    }
+    
+    func navigationUI() {
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor : UIColor.blue, NSAttributedString.Key.font : UIFont(name: "Optima-Bold", size: 24)!]
     }
     
     
@@ -52,26 +58,7 @@ class DisplayReviewViewController: UIViewController {
             review?.title = titleTextField.text ?? ""
             review?.location = locationTextField.text ?? ""
             review?.content = descriptionTextView.text ?? ""
-            review?.modificationTime = Date()
-            
-            let key = refReviews.childByAutoId().key
-            var reviewData = ["id":key,
-                          "title" : titleTextField.text ?? "",
-                          "location" : locationTextField.text ?? "",
-                          "content" : descriptionTextView.text ?? "",
-//                          "modificationTime" : Date()
-                ] as [String : Any]
 
-            refReviews.child(key!).setValue(reviewData)
-            destination.tableView.reloadData()
-
-//        case "save" where review != nil:
-//            review?.title = titleTextField.text ?? ""
-//            review?.location = locationTextField.text ?? ""
-//            review?.content = descriptionTextView.text ?? ""
-//
-//
-//            destination.tableView.reloadData()
             
         case "save" where review == nil:
             let review = Reviews()
