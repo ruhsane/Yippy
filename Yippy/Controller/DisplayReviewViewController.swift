@@ -48,7 +48,6 @@ class DisplayReviewViewController: UIViewController {
         refReviews = Database.database().reference().child("Reviews").child((user!.uid))
 
         switch identifier {
-<<<<<<< HEAD
         case "save" where review != nil:
             review?.title = titleTextField.text ?? ""
             review?.location = locationTextField.text ?? ""
@@ -66,7 +65,6 @@ class DisplayReviewViewController: UIViewController {
             refReviews.child(key!).setValue(reviewData)
             destination.tableView.reloadData()
 
-=======
 //        case "save" where review != nil:
 //            review?.title = titleTextField.text ?? ""
 //            review?.location = locationTextField.text ?? ""
@@ -75,7 +73,6 @@ class DisplayReviewViewController: UIViewController {
 //
 //            destination.tableView.reloadData()
             
->>>>>>> 5e37a40ee1d4a9684778d0880672fa079af993dc
         case "save" where review == nil:
             let review = Reviews()
             review.title = titleTextField.text ?? ""
