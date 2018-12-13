@@ -13,6 +13,8 @@ import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 
+    
+    
     let firebaseAuth = Auth.auth()
 
     
@@ -35,9 +37,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        customUIButton()
 
         // Do any additional setup after loading the view.
     }
+    
+//    func customUIButton () {
+//        myReviewsButton.layer.cornerRadius = 10
+//        signOutButton.layer.cornerRadius = 10
+//    }
 
 
     /*
