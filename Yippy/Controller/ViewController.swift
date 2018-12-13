@@ -29,12 +29,13 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(background)
-        
+        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().signIn()
         view.addSubview(signInButton)
         
-        GIDSignIn.sharedInstance().uiDelegate = self
+        
 //        GIDSignIn.sharedInstance().delegate = self
-//        GIDSignIn.sharedInstance().signIn()
+        
 //        GIDSignIn.sharedInstance().signInSilently()
         
         constraints()

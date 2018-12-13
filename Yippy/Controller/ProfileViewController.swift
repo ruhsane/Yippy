@@ -20,11 +20,12 @@ class ProfileViewController: UIViewController {
         
         do {
             try firebaseAuth.signOut()
+//            GIDSignIn.sharedInstance().signOut()
             print("sign out success")
             let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
             UserDefaults.standard.set(false, forKey: "status")
+            self.present(viewController, animated: true, completion: nil)
             Switcher.updateRootVC()
-            self.present(viewController, animated: false, completion: nil)
             
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
