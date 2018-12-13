@@ -10,6 +10,7 @@
 		2801E6D621ADC71E00C586D1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801E6D521ADC71E00C586D1 /* TableViewController.swift */; };
 		2801E6D821ADE23200C586D1 /* ListReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801E6D721ADE23200C586D1 /* ListReviewTableViewCell.swift */; };
 		2801E6DA21ADE8D000C586D1 /* DisplayReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */; };
+		28905D7921C22F2C00E60DF2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28905D7821C22F2C00E60DF2 /* StoreKit.framework */; };
 		28D2FBB72196A9100077D0FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D2FBB62196A9100077D0FF /* ViewController.swift */; };
 		28DC8A8021AE44B1000701BC /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC8A7F21AE44B1000701BC /* Reviews.swift */; };
 		28DC8A8521AE4D64000701BC /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC8A8421AE4D64000701BC /* DateString.swift */; };
@@ -49,6 +50,7 @@
 		2801E6D521ADC71E00C586D1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2801E6D721ADE23200C586D1 /* ListReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReviewTableViewCell.swift; sourceTree = "<group>"; };
 		2801E6D921ADE8D000C586D1 /* DisplayReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReviewViewController.swift; sourceTree = "<group>"; };
+		28905D7821C22F2C00E60DF2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		28D2FBB62196A9100077D0FF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28DC8A7F21AE44B1000701BC /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		28DC8A8421AE4D64000701BC /* DateString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateString.swift; path = Yippy/Model/DateString.swift; sourceTree = SOURCE_ROOT; };
@@ -85,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BCC314F6CDF9AAA1E100EE /* Pods_Yippy.framework in Frameworks */,
+				28905D7921C22F2C00E60DF2 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +212,7 @@
 		A4FD593D4096B7B7CA7D141D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28905D7821C22F2C00E60DF2 /* StoreKit.framework */,
 				71CE9DD33536D9E57BE8A06D /* Pods_Yippy.framework */,
 				E0A932DDDC02FFD3094FDCCB /* Pods_YippyTests.framework */,
 				3B5304B3E6E88B78601D3C0E /* Pods_YippyUITests.framework */,
@@ -289,6 +293,11 @@
 				TargetAttributes = {
 					9DDB359D2196941C006F414D = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					9DDB35B12196941D006F414D = {
 						CreatedOnToolsVersion = 10.1;
@@ -642,7 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P32V53W8H7;
+				DEVELOPMENT_TEAM = F5JXR2F7P3;
 				INFOPLIST_FILE = Yippy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,7 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P32V53W8H7;
+				DEVELOPMENT_TEAM = F5JXR2F7P3;
 				INFOPLIST_FILE = Yippy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
