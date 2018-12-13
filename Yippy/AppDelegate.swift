@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             appdelegate.window!.rootViewController = navigationVC
             
         }else{
-            let initialViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "Login") as! ViewController
+            let initialViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! ViewController
             self.window?.rootViewController = initialViewController
 
         }

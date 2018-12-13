@@ -15,7 +15,7 @@ class TableViewController: UIViewController {
     @IBAction func profileButton(_ sender: Any) {
         let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as UIViewController
         
-        self.present(viewController, animated: false, completion: nil)
+        self.present(viewController, animated: true, completion: nil)
     }
     
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
